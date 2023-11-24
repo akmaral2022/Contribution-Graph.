@@ -4,7 +4,6 @@ window.onload = async () => {
     try {
         const today = new Date();
         const startDate = new Date(today.getTime() - 50 * 7 * 24 * 60 * 60 * 1000);
-        const endDate = new Date(today.getTime() + 50 * 7 * 24 * 60 * 60 * 1000);
 
         console.log(startDate);
         const response = await fetch('https://dpg.gg/test/calendar.json')
