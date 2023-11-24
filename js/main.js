@@ -78,6 +78,67 @@ window.onload = async () => {
             month.append(monthItem)
         })
 
+        ////////////// Блоки с обьяснением ///////////////////////
+        const zero = document.querySelector('.zero')
+        const nine = document.querySelector('.nine')
+        const nineteen = document.querySelector('.nineteen')
+        const twentyNine = document.querySelector('.twenty__nine')
+        const thirty = document.querySelector('.thirty')
+        zero.addEventListener('mouseenter', () => {
+            const showSucces = document.createElement('div')
+            showSucces.setAttribute('class', 'zero__con con')
+            showSucces.innerHTML = `
+                <p>0 contributions</p>
+                `
+            zero.appendChild(showSucces)
+            zero.addEventListener('mouseleave', () => {
+                showSucces.style.display = 'none'
+            })
+        })
+        nine.addEventListener('mouseenter', () => {
+            const showSucces = document.createElement('div')
+            showSucces.setAttribute('class', 'nine__con con')
+            showSucces.innerHTML = `
+        <p>1-9 contributions</p>
+        `
+            nine.appendChild(showSucces)
+            nine.addEventListener('mouseleave', () => {
+                showSucces.style.display = 'none'
+            })
+        })
+        nineteen.addEventListener('mouseenter', () => {
+            const showSucces = document.createElement('div')
+            showSucces.setAttribute('class', 'nineteen__con con')
+            showSucces.innerHTML = `
+        <p>10-19 contributions</p>
+        `
+            nineteen.appendChild(showSucces)
+            nineteen.addEventListener('mouseleave', () => {
+                showSucces.style.display = 'none'
+            })
+        })
+        twentyNine.addEventListener('mouseenter', () => {
+            const showSucces = document.createElement('div')
+            showSucces.setAttribute('class', 'twenty__nine__con con')
+            showSucces.innerHTML = `
+        <p>20-29 contributions</p>
+        `
+            twentyNine.appendChild(showSucces)
+            twentyNine.addEventListener('mouseleave', () => {
+                showSucces.style.display = 'none'
+            })
+        })
+        thirty.addEventListener('mouseenter', () => {
+            const showSucces = document.createElement('div')
+            showSucces.setAttribute('class', 'thirty__con con')
+            showSucces.innerHTML = `
+        <p>30+ contributions</p>
+        `
+            thirty.appendChild(showSucces)
+            thirty.addEventListener('mouseleave', () => {
+                showSucces.style.display = 'none'
+            })
+        })
     } catch {
         console.error('Произошла ошибка', error);
 

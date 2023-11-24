@@ -99,21 +99,62 @@
 }
 
 .zero {
+    position: relative;
     background: #EDEDED;
 }
 
+.zero__con {
+    position: absolute;
+}
+
 .nine {
+    position: relative;
     background: #ACD5F2;
 }
 
+.nine__con {
+    position: absolute;
+}
+
 .nineteen {
+    position: relative;
     background: #7FA8C9;
 }
 
-.twenty {
+.nineteen__con {
+    position: absolute;
+}
+
+.twenty__nine {
+    position: relative;
     background: #527BA0;
 }
 
+.twenty__nine__con {
+    position: absolute;
+}
+
 .thirty {
+    position: relative;
     background: #254E77;
+}
+
+.thirty__con {
+    position: absolute;
+}
+
+.con {
+    background: #000;
+    width: 145px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 17px;
+    border-radius: 5px 5px 5px 0px;
+}
+
+.con p {
+    color: #fff;
 }
