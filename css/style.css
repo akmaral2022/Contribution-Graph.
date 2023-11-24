@@ -11,6 +11,11 @@
     margin: 200px;
 }
 
+.graph__body {
+    border: 1px solid #ccc;
+
+}
+
 .block {
     margin: 10px;
     display: grid;
@@ -23,8 +28,8 @@
 
 .contribution_graph {
     width: 1120px;
-    height: 279px;
-    margin: auto;
+    height: 179px;
+    margin: 20px auto;
 }
 
 .month__line {

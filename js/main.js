@@ -41,7 +41,6 @@ window.onload = async () => {
             const contributionCount = allBoxes[contributionDate] || 0;
 
             // console.log(contributionCount);
-            dayBox.title = contributionDate;
 
             // СЕГОДНЯШНИЙ ДЕНЬ
             const year = today.getFullYear();
@@ -49,7 +48,8 @@ window.onload = async () => {
             const day = String(today.getDate()).padStart(2, '0');
             const formattedDate = `${year}-${month}-${day}`;
 
-
+            console.log(formattedDate);
+            console.log(contributionDate);
             if (formattedDate === contributionDate) {
                 dayBox.classList.toggle('today')
             }
