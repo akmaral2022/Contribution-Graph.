@@ -41,7 +41,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    max-height: 117px;
+    max-height: 125px;
 }
 
 .day__name {
@@ -49,13 +49,71 @@
 }
 
 .day__box {
+    position: relative;
     height: 15px;
     width: 15px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     background-color: #EDEDED;
+    margin: 1px;
 }
 
+.day__box:hover {
+    border: 1px solid #000;
+}
 
+.show__succes {
+    z-index: 2;
+    position: absolute;
+    background: #000;
+    width: 145px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 17px;
+    border-radius: 5px 5px 5px 0px;
+}
 
-.exp__blocks {}
+.show__succes p {
+    color: #fff;
+}
+
+.today {
+    border: 1px solid rgb(88, 36, 36)d5d;
+}
+
+.exp__blocks {
+    min-width: none;
+    display: flex;
+}
+
+.exp__box {
+    width: 15px;
+    height: 15px;
+}
+
+.exp__title {
+    margin: 0px 10px;
+}
+
+.zero {
+    background: #EDEDED;
+}
+
+.nine {
+    background: #ACD5F2;
+}
+
+.nineteen {
+    background: #7FA8C9;
+}
+
+.twenty {
+    background: #527BA0;
+}
+
+.thirty {
+    background: #254E77;
+}

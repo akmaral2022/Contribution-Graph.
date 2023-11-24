@@ -25,6 +25,18 @@ window.onload = async () => {
 
             const dayBox = document.createElement('div')
             dayBox.setAttribute('class', 'day__box')
+            dayBox.addEventListener('mouseenter', () => {
+                const showSucces = document.createElement('div')
+                showSucces.setAttribute('class', 'show__succes')
+                showSucces.innerHTML = `
+                <p>${contributionCount} contributions</p>
+                <p>${contributionDate}</p>
+                `
+                dayBox.appendChild(showSucces)
+                dayBox.addEventListener('mouseleave', () => {
+                    showSucces.style.display = 'none'
+                })
+            })
 
             const contributionCount = allBoxes[contributionDate] || 0;
 
@@ -37,9 +49,9 @@ window.onload = async () => {
             const day = String(today.getDate()).padStart(2, '0');
             const formattedDate = `${year}-${month}-${day}`;
 
-            ;
+
             if (formattedDate === contributionDate) {
-                dayBox.style.border = "1px solid #000"
+                dayBox.classList.toggle('today')
             }
 
             if (contributionCount === 0) {
@@ -55,6 +67,7 @@ window.onload = async () => {
             }
 
             calendar.appendChild(dayBox)
+
         }
 
 
