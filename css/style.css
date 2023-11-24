@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+.wrapper {
+    margin: 200px;
+}
+
+.contribution_graph {
+    width: 1120px;
+    height: 279px;
+    border: 3px solid #000000;
+    margin: auto;
+}
+
+.month__line {}
+
+.day__column {}
+
+.calendar {
+    /* display: inline-grid;
+    grid-template-columns: repeat(51, 15px);
+    grid-template-rows: repeat(7, 15px);
+    gap: 2px; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 117px;
+}
+
+.day__box {
+    /* width: 100%;
+    height: 100%; */
+    height: 15px;
+    width: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    background-color: #EDEDED;
+}
+
+.day__box9 {}
+
+.day__box19 {}
+
+.day__box29 {}
+
+.day__box30 {}
+
+
+
+.today {
+    border: 1px solid #000;
+}
+
+.exp__blocks {}
