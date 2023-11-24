@@ -1,31 +1,46 @@
 const calendar = document.querySelector('.calendar')
-// const dayBox = document.querySelector('.day__box')
+const month = document.querySelector('.month__line')
+const week = document.querySelector('.week__column')
+
 window.onload = async () => {
     try {
         const today = new Date();
         const startDate = new Date(today.getTime() - 50 * 7 * 24 * 60 * 60 * 1000);
 
-        console.log(startDate);
+        const monthNames = []
+
+        // КАЛЕНДАРЬ        
         const response = await fetch('https://dpg.gg/test/calendar.json')
         const allBoxes = await response.json()
-        const contributions = Object.values(allBoxes)
-        const graphContainer = document.querySelector('.contribution-graph');
 
         let currentDate = new Date(startDate)
         while (currentDate <= today) {
+            const monthName = currentDate.toLocaleString('default', { month: 'long' })
+            if (!monthNames.includes(monthName)) {
+                monthNames.push(monthName)
+            }
+
             const contributionDate = currentDate.toISOString().split('T')[0];
             currentDate.setDate(currentDate.getDate() + 1);
-
-            console.log(contributionDate);
 
             const dayBox = document.createElement('div')
             dayBox.setAttribute('class', 'day__box')
 
-            const contributionCount = allBoxes[contributionDate];
+            const contributionCount = allBoxes[contributionDate] || 0;
 
-            console.log(contributionCount);
-            // contributions.forEach(box => {
+            // console.log(contributionCount);
+            dayBox.title = contributionDate;
 
+            // СЕГОДНЯШНИЙ ДЕНЬ
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            const formattedDate = `${year}-${month}-${day}`;
+
+            ;
+            if (formattedDate === contributionDate) {
+                dayBox.style.border = "1px solid #000"
+            }
 
             if (contributionCount === 0) {
                 dayBox.style.background = '#EDEDED'
@@ -38,9 +53,17 @@ window.onload = async () => {
             } else if (contributionCount > 30) {
                 dayBox.style.background = '#254E77'
             }
+
             calendar.appendChild(dayBox)
-            // });
         }
+
+
+        monthNames.forEach(monthName => {
+            const monthItem = document.createElement('div')
+            monthItem.setAttribute('class', 'month__name')
+            monthItem.textContent = monthName
+            month.append(monthItem)
+        })
 
     } catch {
         console.error('Произошла ошибка', error);
