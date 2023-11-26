@@ -5,7 +5,7 @@ const week = document.querySelector('.week__column')
 window.onload = async () => {
     try {
         const today = new Date();
-        const startDate = new Date(today.getTime() - 50 * 7 * 24 * 60 * 60 * 1000);
+        const startDate = new Date(today.getTime() - 51.5 * 7 * 24 * 60 * 60 * 1000);
         const monthNames = []
 
         // КАЛЕНДАРЬ        
