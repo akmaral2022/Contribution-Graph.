@@ -6,7 +6,6 @@ window.onload = async () => {
     try {
         const today = new Date();
         const startDate = new Date(today.getTime() - 50 * 7 * 24 * 60 * 60 * 1000);
-
         const monthNames = []
 
         // КАЛЕНДАРЬ        
@@ -14,6 +13,7 @@ window.onload = async () => {
         const allBoxes = await response.json()
 
         let currentDate = new Date(startDate)
+        console.log(currentDate);
         while (currentDate <= today) {
             const monthName = currentDate.toLocaleString('default', { month: 'long' })
             if (!monthNames.includes(monthName)) {
@@ -40,16 +40,12 @@ window.onload = async () => {
 
             const contributionCount = allBoxes[contributionDate] || 0;
 
-            // console.log(contributionCount);
-
             // СЕГОДНЯШНИЙ ДЕНЬ
             const year = today.getFullYear();
             const month = String(today.getMonth() + 1).padStart(2, '0');
             const day = String(today.getDate()).padStart(2, '0');
             const formattedDate = `${year}-${month}-${day}`;
 
-            console.log(formattedDate);
-            console.log(contributionDate);
             if (formattedDate === contributionDate) {
                 dayBox.classList.toggle('today')
             }
