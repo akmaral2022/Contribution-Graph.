@@ -41,12 +41,9 @@ window.onload = async () => {
             const contributionCount = allBoxes[contributionDate] || 0;
 
             // СЕГОДНЯШНИЙ ДЕНЬ
-            const year = today.getFullYear();
-            const month = String(today.getMonth() + 1).padStart(2, '0');
-            const day = String(today.getDate()).padStart(2, '0');
-            const formattedDate = `${year}-${month}-${day}`;
+            const formattedDate = currentDate.toISOString().split('T')[0];
 
-            if (formattedDate === contributionDate) {
+            if (formattedDate === currentDate.toISOString().split('T')[0]) {
                 dayBox.classList.toggle('today')
             }
 
